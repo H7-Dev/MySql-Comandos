@@ -220,3 +220,36 @@ Referências
 *   [Documentação oficial do MySQL - SET Syntax for Variable Assignment](https://dev.mysql.com/doc/refman/8.0/en/set-variable.html)
 *   [Documentação oficial do MySQL - Server SQL Modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html)
 
+
+# **✍️ CMD `DROP TABLE tb_baralhos;`**
+
+
+Descrição
+---------
+
+Este código é uma instrução SQL para excluir uma tabela chamada "tb\_baralhos" de um banco de dados utilizando a linguagem PHP. A tabela será permanentemente removida do banco de dados.
+
+Código
+------
+
+sql
+
+```sql
+DROP TABLE tb_baralhos;
+```
+
+Detalhes
+--------
+
+*   `DROP TABLE`: É uma instrução SQL utilizada para excluir uma tabela de um banco de dados no sistema de gerenciamento de banco de dados (SGBD).
+*   `tb_baralhos`: É o nome da tabela que está sendo excluída. Você pode substituir esse nome pelo nome da tabela que deseja excluir do seu banco de dados.
+
+Atenção
+-------
+
+A exclusão de uma tabela é uma operação irreversível e todos os dados contidos na tabela serão permanentemente removidos. Certifique-se de ter um backup adequado dos dados antes de executar essa instrução em um ambiente de produção.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - DROP TABLE](https://dev.mysql.com/doc/refman/8.0/en/drop-table.html)

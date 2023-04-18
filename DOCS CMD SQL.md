@@ -455,6 +455,11 @@ sql
 ALTER TABLE tb_baralhos MODIFY c_descr varchar(1545) NULL;
 ```
 
+
+```sql
+ALTER TABLE tb_baralhos MODIFY c_descr varchar(1545) NULL;
+```
+
 Detalhes
 --------
 
@@ -518,6 +523,96 @@ Referências
 *   [Documentação oficial do MySQL - Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)
 
 
+
 👉Resultado
 ---------
 ![image](https://user-images.githubusercontent.com/93455937/232916898-f877fa84-df49-490b-bf29-a5acb05bb3f6.png)
+
+# **✍️ Funções `DATE(NOW()); CURRENT_TIMESTAMP; CURRENT_DATE;`**
+
+
+Descrição
+---------
+
+Este é um exemplo de código SQL que faz alterações em uma tabela chamada "tb\_baralhos" em um banco de dados. As alterações incluem a modificação da coluna "c\_dtc" para permitir valores nulos e definir um valor padrão para a data atual usando a função "NOW()", bem como adicionar uma coluna "TIMESTAMP" com restrições de não nulo, valor padrão e atualização automática.
+
+Detalhes
+--------
+
+### 1\. Modificação da coluna "c\_dtc"
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos MODIFY c_dtc DATE NULL;
+```
+
+Esta consulta SQL modifica a tabela "tb\_baralhos" e altera a coluna "c\_dtc" para permitir valores nulos, ou seja, não obriga mais que seja informado um valor para esta coluna ao inserir ou atualizar registros na tabela.
+
+### 2\. Modificação da coluna "c\_dtc" com valor padrão
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos MODIFY c_dtc DATE NULL DEFAULT DATE(NOW());
+```
+
+Esta consulta SQL modifica a tabela "tb\_baralhos" e define um valor padrão para a coluna "c\_dtc" como a data atual obtida pela função "NOW()". Isso significa que se nenhum valor for fornecido para "c\_dtc" durante a inserção de um novo registro, a data atual será automaticamente inserida como valor padrão.
+
+### 3\. Adição de coluna "TIMESTAMP"
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD c_timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+```
+
+Esta consulta SQL adiciona uma nova coluna chamada "c\_timestamp" à tabela "tb\_baralhos". Essa coluna é do tipo "TIMESTAMP" e possui as seguintes características:
+
+*   "NOT NULL": Não permite valores nulos, ou seja, é obrigatório informar um valor para esta coluna ao inserir ou atualizar registros na tabela.
+*   "DEFAULT CURRENT\_TIMESTAMP": Define o valor padrão como a data e hora atuais quando um novo registro é inserido na tabela.
+*   "ON UPDATE CURRENT\_TIMESTAMP": Atualiza automaticamente o valor da coluna para a data e hora atuais sempre que o registro é atualizado.
+
+***👀 Atenção***
+-----------
+
+A sintaxe para obter a data atual pode variar dependendo do banco de dados que está sendo utilizado. O uso de `DATE(NOW())` é específico para o MariaDB (ou MySQL), onde a função `NOW()` retorna a data e hora atuais, e a função `DATE()` extrai apenas a parte da data.
+Aqui estão alguns exemplos de como obter a data atual em outros bancos de dados populares:
+
+*   PostgreSQL: Utilize a função `CURRENT_DATE` para obter apenas a data atual, ou `CURRENT_TIMESTAMP` para obter a data e hora atuais.
+
+sql
+
+```sql
+-- Exemplo de uso do CURRENT_DATE:
+ALTER TABLE tb_baralhos MODIFY c_dtc DATE NULL DEFAULT CURRENT_DATE;
+
+-- Exemplo de uso do CURRENT_TIMESTAMP:
+ALTER TABLE tb_baralhos ADD c_timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+```
+
+*   Microsoft SQL Server: Utilize a função `GETDATE()` para obter a data e hora atuais, e a função `CAST` para extrair apenas a parte da data.
+
+sql
+
+```sql
+-- Exemplo de uso do GETDATE():
+ALTER TABLE tb_baralhos MODIFY c_dtc DATE NULL DEFAULT GETDATE();
+
+-- Exemplo de uso do GETDATE() com CAST:
+ALTER TABLE tb_baralhos ADD c_timestamp DATETIME NOT NULL DEFAULT CAST(GETDATE() AS DATE);
+```
+
+*   Oracle Database: Utilize a função `SYSDATE` para obter a data e hora atuais, e a função `TRUNC` para extrair apenas a parte da data.
+
+sql
+
+```sql
+-- Exemplo de uso do SYSDATE:
+ALTER TABLE tb_baralhos MODIFY c_dtc DATE NULL DEFAULT SYSDATE;
+
+-- Exemplo de uso do SYSDATE com TRUNC:
+ALTER TABLE tb_baralhos ADD c_timestamp DATE NOT NULL DEFAULT TRUNC(SYSDATE);
+```
+
+É importante verificar a documentação específica do banco de dados que está sendo utilizado para obter a sintaxe correta para obter a data atual.

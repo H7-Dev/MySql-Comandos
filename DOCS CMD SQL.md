@@ -285,3 +285,36 @@ Referências
 -----------
 
 *   [Documentação oficial do MySQL - DELETE Statement](https://dev.mysql.com/doc/refman/8.0/en/delete.html)
+
+
+
+# **✍️ CMD `SELECT * FROM tb_baralhos`**
+
+Descrição
+---------
+
+Este código é uma instrução SQL para realizar uma consulta de todos os registros da tabela "tb\_baralhos". A tabela "tb\_baralhos" é parte de um sistema de CRUD (Create, Read, Update, Delete) em PHP, seguindo a arquitetura de MVC (Model-View-Controller) para a organização do código-fonte.
+
+Código
+------
+
+sql
+
+```sql
+SELECT * FROM tb_baralhos;
+```
+
+Detalhes
+--------
+
+*   `SELECT`: É uma instrução SQL utilizada para realizar consultas em um banco de dados, retornando dados específicos de uma tabela.
+*   `*`: É um caractere curinga que representa todas as colunas da tabela. Neste caso, a consulta está retornando todas as colunas da tabela "tb\_baralhos".
+*   `FROM`: É uma cláusula SQL utilizada para especificar a tabela da qual se deseja realizar a consulta.
+*   `tb_baralhos`: É o nome da tabela da qual os dados estão sendo consultados. Você pode substituir esse nome pelo nome da tabela que deseja consultar em seu banco de dados.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
+*   [Documentação oficial do PHP - PDO (PHP Data Objects)](https://www.php.net/manual/en/book.pdo.php)
+*   [Documentação oficial do padrão MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)

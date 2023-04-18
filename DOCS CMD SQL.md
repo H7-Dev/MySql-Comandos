@@ -318,3 +318,43 @@ Referências
 *   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
 *   [Documentação oficial do PHP - PDO (PHP Data Objects)](https://www.php.net/manual/en/book.pdo.php)
 *   [Documentação oficial do padrão MVC](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)
+
+
+
+# **✍️ CMD `INSERT INTO `**
+
+Descrição
+---------
+
+Este código é uma instrução SQL para inserir dados em uma tabela chamada "tb\_baralhos". A instrução realiza a inserção de um novo registro na tabela com os valores especificados para as colunas "idBar", "c\_bar" e "c\_dt".
+
+Código
+------
+
+sql
+
+```sql
+INSERT INTO tb_baralhos 
+    (idBar, c_bar, c_dt) 
+    VALUES 
+    (1, 'Baralho #001', '2023-01-01');
+```
+
+Detalhes
+--------
+
+*   `INSERT INTO`: É uma instrução SQL utilizada para adicionar novos registros em uma tabela específica.
+*   `tb_baralhos`: É o nome da tabela na qual os dados estão sendo inseridos. Você pode substituir esse nome pelo nome da tabela em que deseja inserir os dados.
+*   `(idBar, c_bar, c_dt)`: São as colunas da tabela às quais os valores estão sendo atribuídos. Neste caso, são as colunas "idBar", "c\_bar" e "c\_dt".
+*   `VALUES`: É uma cláusula que especifica os valores a serem inseridos nas colunas da tabela.
+*   `(1, 'Baralho #001', '2023-01-01')`: São os valores que estão sendo inseridos nas colunas da tabela. Neste caso, é um novo registro com os valores "1" para "idBar", "Baralho #001" para "c\_bar" e "2023-01-01" para "c\_dt". Os valores devem estar na mesma ordem das colunas especificadas anteriormente.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - INSERT INTO Statement](https://dev.mysql.com/doc/refman/8.0/en/insert.html)
+
+
+👉Resultado
+---------
+![image](https://user-images.githubusercontent.com/93455937/232838004-9a789c55-145a-4814-a283-e3fbea11149f.png)

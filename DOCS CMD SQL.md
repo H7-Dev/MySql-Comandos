@@ -441,3 +441,83 @@ Referências
 
 ![image](https://user-images.githubusercontent.com/93455937/232912257-613e99c8-6c24-4f19-89c4-f2a3ee900d67.png)
 ![image](https://user-images.githubusercontent.com/93455937/232912398-1b8b5f45-f7ab-447c-a1a4-1b751da3c7ad.png)
+
+# **✍️ CMD `ALTER TABLE tabela MODIFY coluna`**
+
+Este código é uma instrução SQL para alterar a definição de uma coluna em uma tabela chamada "tb\_baralhos" em um banco de dados. A coluna "c\_descr" está sendo modificada para permitir um tamanho máximo de 1545 caracteres e permitir valores nulos (NULL). Essa instrução é utilizada para alterar a estrutura de uma tabela já existente.
+
+Código
+------
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos MODIFY c_descr varchar(1545) NULL;
+```
+
+Detalhes
+--------
+
+*   `ALTER TABLE`: É uma instrução SQL utilizada para modificar a estrutura de uma tabela existente em um sistema de gerenciamento de banco de dados (SGBD).
+*   `tb_baralhos`: É o nome da tabela que está sendo modificada. Substitua esse nome pelo nome da tabela que você deseja alterar na sua base de dados.
+*   `MODIFY c_descr varchar(1545) NULL`: É a cláusula que especifica a alteração na coluna "c\_descr". Neste caso, a definição da coluna está sendo modificada para permitir um tamanho máximo de 1545 caracteres, com o tipo de dado "varchar", que é utilizado para armazenar strings de tamanho variável. Além disso, a cláusula "NULL" permite que essa coluna aceite valores nulos.
+
+
+
+A sintaxe da cláusula `MODIFY` pode variar dependendo do sistema de gerenciamento de banco de dados (SGBD) que você está usando. Aqui estão alguns exemplos de como a cláusula `MODIFY` pode ser escrita em outros SGBDs populares:
+
+1.  MySQL (versões anteriores ao MariaDB):
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos MODIFY c_descr varchar(1545) NULL;
+```
+
+2.  PostgreSQL:
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ALTER COLUMN c_descr TYPE varchar(1545), ALTER COLUMN c_descr DROP NOT NULL;
+```
+
+3.  Microsoft SQL Server:
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ALTER COLUMN c_descr varchar(1545) NULL;
+```
+
+4.  Oracle Database:
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos MODIFY c_descr varchar2(1545) NULL;
+```
+
+5.  SQLite: Não suporta a cláusula `MODIFY` diretamente. Para modificar uma tabela, é necessário criar uma nova tabela com a nova definição, copiar os dados da tabela antiga para a nova tabela e, em seguida, renomear a nova tabela para o nome original.
+
+    É importante notar que a sintaxe exata da cláusula `MODIFY` pode variar entre diferentes versões dos SGBDs, por isso é sempre recomendável consultar a documentação oficial do SGBD específico que você está usando para obter a sintaxe correta.
+
+
+***SGBD*** 
+-----
+SGBD é a sigla para Sistema de Gerenciamento de Banco de Dados. É um software projetado para gerenciar a criação, organização, armazenamento, recuperação, modificação e exclusão de dados em um banco de dados. O SGBD atua como uma interface entre os aplicativos de software e os dados armazenados em um banco de dados, permitindo que os usuários interajam com os dados de forma eficiente e segura.
+
+Os SGBDs são amplamente utilizados em aplicações de software, desde sistemas empresariais complexos até aplicativos de desktop e aplicativos móveis. Eles são responsáveis por garantir a integridade, consistência e segurança dos dados armazenados, bem como por fornecer mecanismos para consultas e manipulação de dados.
+
+Existem vários tipos de SGBDs disponíveis, incluindo bancos de dados relacionais, como MySQL, PostgreSQL, Microsoft SQL Server e Oracle Database, e bancos de dados não relacionais, como MongoDB e Cassandra. Cada tipo de SGBD possui suas próprias características e é adequado para diferentes tipos de aplicativos, dependendo dos requisitos específicos de armazenamento e acesso aos dados.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html)
+*   [Documentação oficial do MySQL - Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)
+
+
+👉Resultado
+---------
+![image](https://user-images.githubusercontent.com/93455937/232916898-f877fa84-df49-490b-bf29-a5acb05bb3f6.png)

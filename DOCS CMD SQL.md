@@ -137,3 +137,42 @@ As configurações de tabela, como ENGINE, DEFAULT CHARSET e COLLATE, são impor
 👉Resultado
 ---------
 ![image](https://user-images.githubusercontent.com/93455937/232827943-a20ebf2d-3a40-4041-aa26-9a5abfde1156.png)
+
+
+
+
+# **✍️ CMD `SHOW COLUMNS FROM tb_baralhos`**
+
+Descrição
+---------
+
+Este código é uma instrução SQL para exibir as colunas de uma tabela chamada "tb\_baralhos" utilizando a linguagem PHP. A instrução "SHOW COLUMNS" é usada para obter informações sobre as colunas de uma tabela existente no banco de dados.
+
+Código
+------
+
+sql
+
+```sql
+SHOW COLUMNS FROM tb_baralhos;
+```
+
+Detalhes
+--------
+
+*   `SHOW COLUMNS`: É uma instrução SQL utilizada para obter informações detalhadas sobre as colunas de uma tabela existente no banco de dados.
+*   `FROM tb_baralhos`: É a cláusula que especifica a tabela da qual se deseja obter informações das colunas. "tb\_baralhos" é o nome da tabela da qual as colunas serão exibidas. Você pode substituir esse nome pelo nome da tabela que deseja obter informações.
+
+Resultados
+----------
+
+A instrução "SHOW COLUMNS" retorna um conjunto de resultados que contém informações detalhadas sobre as colunas da tabela especificada. Essas informações podem incluir o nome da coluna, o tipo de dado, o tamanho máximo do dado, se a coluna permite nulos (NULL), se é uma chave primária, se é uma chave estrangeira, entre outras informações relevantes sobre as colunas da tabela.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - SHOW COLUMNS](https://dev.mysql.com/doc/refman/8.0/en/show-columns.html)
+
+👉Resultado
+---------
+![image](https://user-images.githubusercontent.com/93455937/232831343-399f0226-455d-42c3-943f-cf5f3b44c538.png)

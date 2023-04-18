@@ -176,3 +176,47 @@ Referências
 👉Resultado
 ---------
 ![image](https://user-images.githubusercontent.com/93455937/232831343-399f0226-455d-42c3-943f-cf5f3b44c538.png)
+
+
+===========================================================
+
+# **✍️ CMD `SET SQL_SAFE_UPDATES`**
+
+Descrição
+---------
+Configuração do **SQL\_SAFE\_UPDATES;** Este código é composto por duas instruções SQL para configurar a variável de sistema `SQL_SAFE_UPDATES` no MySQL. A primeira instrução `SET SQL_SAFE_UPDATES = 0;` desativa o modo seguro de atualizações no banco de dados, permitindo a execução de atualizações sem a cláusula `WHERE`, o que pode ser arriscado em alguns casos. A segunda instrução `SET SQL_SAFE_UPDATES = 1;` reativa o modo seguro de atualizações, que é a configuração padrão do MySQL, tornando obrigatória a utilização da cláusula `WHERE` em atualizações.
+
+Código
+------
+
+sql
+
+```sql
+SET SQL_SAFE_UPDATES = 0;
+-- Realize as atualizações necessárias aqui
+```
+sql
+```sql
+-- Realize as atualizações necessárias aqui
+SET SQL_SAFE_UPDATES = 1;
+```
+
+Detalhes
+--------
+
+*   `SET SQL_SAFE_UPDATES`: É uma instrução SQL utilizada para definir o valor da variável de sistema `SQL_SAFE_UPDATES` no MySQL. Essa variável controla se é permitido ou não realizar atualizações sem a cláusula `WHERE` em tabelas que não possuam uma chave primária ou única definida.
+*   `0`: É o valor que define o modo inseguro de atualizações, onde atualizações sem cláusula `WHERE` são permitidas.
+*   `1`: É o valor que define o modo seguro de atualizações, onde atualizações sem cláusula `WHERE` são bloqueadas.
+
+Importante
+----------
+
+*   É recomendado utilizar o modo seguro de atualizações, com `SQL_SAFE_UPDATES` definido como `1`, para evitar atualizações acidentais ou indesejadas em todas as situações em que não há uma necessidade específica de desativá-lo.
+*   Antes de desativar o modo seguro de atualizações com `SQL_SAFE_UPDATES` definido como `0`, é importante ter cuidado e garantir que as atualizações sejam realizadas com atenção e segurança, utilizando cláusulas `WHERE` adequadas para evitar atualizações indesejadas em registros incorretos.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - SET Syntax for Variable Assignment](https://dev.mysql.com/doc/refman/8.0/en/set-variable.html)
+*   [Documentação oficial do MySQL - Server SQL Modes](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html)
+

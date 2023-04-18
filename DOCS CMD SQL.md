@@ -253,3 +253,35 @@ Referências
 -----------
 
 *   [Documentação oficial do MySQL - DROP TABLE](https://dev.mysql.com/doc/refman/8.0/en/drop-table.html)
+
+
+# **✍️ CMD `DELETE FROM tb_baralhos WHERE idBar = 7;`**
+
+
+Descrição
+---------
+
+Este código é uma instrução SQL para excluir um registro da tabela "tb\_baralhos" em um banco de dados, especificamente o registro que possui o valor "7" no campo "idBar". Essa instrução é utilizada para deletar dados de uma tabela em um sistema de gerenciamento de banco de dados (SGBD) usando a linguagem PHP.
+
+Código
+------
+
+sql
+
+```sql
+DELETE FROM tb_baralhos WHERE idBar = 7;
+```
+
+Detalhes
+--------
+
+*   `DELETE FROM`: É uma instrução SQL utilizada para excluir registros de uma tabela em um banco de dados.
+*   `tb_baralhos`: É o nome da tabela da qual o registro será excluído. Você deve substituir esse nome pelo nome da tabela que deseja excluir o registro.
+*   `WHERE`: É uma cláusula condicional que permite especificar a condição para exclusão dos registros. Neste caso, a condição é "idBar = 7", ou seja, será excluído o registro cujo valor do campo "idBar" seja igual a 7. Você pode ajustar essa condição de acordo com os critérios de exclusão desejados.
+*   `idBar`: É o nome do campo que será utilizado na condição de exclusão. Você deve substituir esse nome pelo nome do campo correto da sua tabela.
+*   `7`: É o valor que será utilizado na condição de exclusão. Você pode substituir esse valor pelo valor correto que deseja utilizar para excluir o registro desejado.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - DELETE Statement](https://dev.mysql.com/doc/refman/8.0/en/delete.html)

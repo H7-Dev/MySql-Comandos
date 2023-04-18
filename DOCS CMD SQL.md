@@ -1,10 +1,9 @@
 
-Documentação do Código - Criação de Banco de Dados
-==================================================
+# ***Documentação do Código - Criação de Banco de Dados***
 
 Comando básico para criação e manipulação de um banco de dados com imagens ilustrativas
 
-# **CREATE DATABASE IF NOT EXISTS**
+# **✍️ CMD `CREATE DATABASE IF NOT EXISTS`**
 
 Descrição
 ---------
@@ -36,7 +35,7 @@ Referências
 *   [Documentação oficial do MySQL - Character Sets and Collations](https://dev.mysql.com/doc/refman/8.0/en/charset-general.html)
 
 
-# **CMD `USE`**
+# **✍️ CMD `USE`**
 
 Descrição
 ---------
@@ -64,7 +63,7 @@ Referências
 *   [Documentação oficial do MySQL - USE](https://dev.mysql.com/doc/refman/8.0/en/use.html)
 
 
-# **CMD `CREATE TABLE IF NOT EXISTS`**
+# **✍️ CMD `CREATE TABLE IF NOT EXISTS`**
 
 Descrição
 ---------
@@ -120,7 +119,7 @@ Conclusão
 Em resumo, o uso de colunas VARCHAR pode ter vantagens significativas em termos de economia de espaço, desempenho de busca, flexibilidade e compatibilidade em comparação com o uso de colunas TEXT. É importante considerar as necessidades específicas do projeto e as características do banco de dados ao escolher entre VARCHAR e TEXT para armazenamento de texto.
 
 
-Documentação - Configurações de Tabela
+Configurações básicas de Tabela
 ======================================
 
 
@@ -135,6 +134,6 @@ Conclusão
 ---------
 As configurações de tabela, como ENGINE, DEFAULT CHARSET e COLLATE, são importantes para definir o comportamento e as características das tabelas em um banco de dados. É importante considerar as necessidades específicas do projeto e as características do banco de dados ao configurar uma tabela, para garantir o correto funcionamento e desempenho do sistema.
 
-Resultado
+👉Resultado
 ---------
 ![image](https://user-images.githubusercontent.com/93455937/232827943-a20ebf2d-3a40-4041-aa26-9a5abfde1156.png)

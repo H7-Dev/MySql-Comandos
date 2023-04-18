@@ -358,3 +358,44 @@ Referências
 👉Resultado
 ---------
 ![image](https://user-images.githubusercontent.com/93455937/232838004-9a789c55-145a-4814-a283-e3fbea11149f.png)
+
+
+
+# **✍️ CMD `UPDATE SET WHERE`**
+
+
+Este código é uma instrução SQL para atualizar os dados de uma tabela chamada "tb\_baralhos" em um banco de dados. A instrução "UPDATE" permite modificar os valores de colunas específicas em uma ou mais linhas de uma tabela. Neste exemplo, os valores das colunas "c\_bar" e "c\_dt" serão atualizados na linha onde o valor da coluna "idBar" for igual a 1.
+
+Código
+------
+
+sql
+
+```sql
+UPDATE tb_baralhos
+SET 
+  c_bar = 'Baralho #001 update',
+  c_dt = '2022-04-10'
+WHERE idBar = 1;
+```
+
+Detalhes
+--------
+
+*   `UPDATE`: É uma instrução SQL utilizada para atualizar os dados em uma tabela.
+*   `tb_baralhos`: É o nome da tabela que está sendo atualizada. Você pode substituir esse nome pelo nome da tabela que deseja atualizar os dados.
+*   `SET`: É uma cláusula que especifica as colunas e os valores que serão atualizados na tabela. Neste exemplo, a coluna "c\_bar" será atualizada com o valor 'Baralho #001 update' e a coluna "c\_dt" será atualizada com o valor '2022-04-10'.
+*   `WHERE`: É uma cláusula condicional que especifica a condição que as linhas devem atender para serem atualizadas. Neste exemplo, a condição é que o valor da coluna "idBar" seja igual a 1.
+*   `idBar`: É o nome da coluna que está sendo utilizada como condição para atualização. Você pode substituir esse nome pelo nome da coluna que deseja utilizar como condição.
+*   `1`: É o valor que está sendo comparado na condição. Você pode substituir esse valor pelo valor desejado para a condição de atualização.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - UPDATE](https://dev.mysql.com/doc/refman/8.0/en/update.html)
+*   [Documentação oficial do MySQL - WHERE Clause](https://dev.mysql.com/doc/refman/8.0/en/where-optimizations.html)
+
+👉Resultado
+---------
+![image](https://user-images.githubusercontent.com/93455937/232910582-b782ee23-2f3d-4e56-b45d-397d2001cbf3.png)
+

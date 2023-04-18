@@ -399,3 +399,45 @@ Referências
 ---------
 ![image](https://user-images.githubusercontent.com/93455937/232910582-b782ee23-2f3d-4e56-b45d-397d2001cbf3.png)
 
+
+
+
+# **✍️ CMD `ALTER TABLE ADD novaColuna AFTER colunaExistente`**
+
+
+Descrição
+---------
+
+Este código é uma instrução SQL para alterar a tabela "tb\_baralhos" em um banco de dados. A instrução "ALTER TABLE" é usada para modificar a estrutura de uma tabela existente, adicionando uma nova coluna chamada "c\_descr" do tipo VARCHAR com tamanho máximo de 255 caracteres. A coluna é definida como opcional (NULL) e será adicionada após a coluna "c\_dt" na ordem das colunas da tabela.
+
+Código
+------
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD c_descr VARCHAR(255) NULL AFTER c_dt;
+```
+
+Detalhes
+--------
+
+*   `ALTER TABLE`: É uma instrução SQL utilizada para modificar a estrutura de uma tabela existente em um banco de dados.
+*   `tb_baralhos`: É o nome da tabela que está sendo alterada. Você pode substituir esse nome pelo nome da tabela que deseja modificar.
+*   `ADD`: É uma cláusula do "ALTER TABLE" que indica que uma nova coluna está sendo adicionada à tabela.
+*   `c_descr`: É o nome da nova coluna que está sendo adicionada à tabela. Você pode substituir esse nome pelo nome que desejar para a nova coluna.
+*   `VARCHAR(255)`: É o tipo de dado da nova coluna. "VARCHAR" é um tipo de dado de texto que pode armazenar uma sequência de caracteres. "(255)" indica o tamanho máximo da coluna, que neste caso é de 255 caracteres. Você pode ajustar esse tamanho de acordo com suas necessidades.
+*   `NULL`: É uma especificação da opcionalidade da coluna. Neste caso, a nova coluna "c\_descr" é definida como opcional, ou seja, pode conter valores nulos.
+*   `AFTER c_dt`: É uma especificação da posição da nova coluna em relação às colunas existentes na tabela. Neste caso, a nova coluna "c\_descr" será adicionada após a coluna "c\_dt" na ordem das colunas da tabela.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - ALTER TABLE](https://dev.mysql.com/doc/refman/8.0/en/alter-table.html)
+*   [Documentação oficial do MySQL - Data Types](https://dev.mysql.com/doc/refman/8.0/en/data-types.html)
+
+👉Resultado
+---------
+
+![image](https://user-images.githubusercontent.com/93455937/232912257-613e99c8-6c24-4f19-89c4-f2a3ee900d67.png)
+![image](https://user-images.githubusercontent.com/93455937/232912398-1b8b5f45-f7ab-447c-a1a4-1b751da3c7ad.png)

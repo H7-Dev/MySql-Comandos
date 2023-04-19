@@ -616,3 +616,154 @@ ALTER TABLE tb_baralhos ADD c_timestamp DATE NOT NULL DEFAULT TRUNC(SYSDATE);
 ```
 
 É importante verificar a documentação específica do banco de dados que está sendo utilizado para obter a sintaxe correta para obter a data atual.
+
+
+
+<!--  -->
+
+Documentação do Código - Adição de Coluna e Chave Estrangeira
+=============================================================
+
+# **✍️ CMD `FOREIGN KEY e Suas Especificações`**
+
+Descrição
+---------
+
+Este código é uma série de instruções SQL para adicionar uma coluna chamada "fk\_Marcador" em uma tabela chamada "tb\_baralhos" e, em seguida, criar uma chave estrangeira (foreign key) que faz referência à coluna "idMarcador" da tabela "tb\_marca". A cláusula "NULL" indica que a coluna "fk\_Marcador" pode aceitar valores nulos. Além disso, são definidas as ações de "ON DELETE SET NULL" e "ON UPDATE CASCADE" para a chave estrangeira, indicando o que acontecerá quando registros forem deletados ou atualizados na tabela referenciada.
+
+Código
+------
+
+sql
+
+```sql
+-- Adiciona coluna para chave estrangeira
+ALTER TABLE tb_baralhos ADD fk_Marcador VARCHAR(255) NULL AFTER c_descr;
+
+-- Cria chave estrangeira
+ALTER TABLE tb_baralhos ADD CONSTRAINT fk_tb_marca
+FOREIGN KEY (fk_Marcador) REFERENCES tb_marca(idMarcador)
+ON DELETE SET NULL
+ON UPDATE CASCADE;
+```
+
+Detalhes
+--------
+
+*   `ALTER TABLE`: É uma instrução SQL utilizada para alterar a estrutura de uma tabela existente.
+*   `tb_baralhos`: É o nome da tabela à qual a coluna e a chave estrangeira estão sendo adicionadas. Você pode substituir esse nome pelo nome da tabela que desejar.
+*   `ADD`: É uma cláusula que indica que uma nova coluna está sendo adicionada à tabela.
+*   `fk_Marcador`: É o nome da nova coluna que está sendo adicionada, que irá armazenar a chave estrangeira. Você pode substituir esse nome pelo nome que desejar para a coluna.
+*   `VARCHAR(255)`: É o tipo de dados da coluna, que é definido como uma string de até 255 caracteres. Você pode ajustar o tamanho máximo da string de acordo com suas necessidades.
+*   `NULL`: É a especificação de que a coluna "fk\_Marcador" pode aceitar valores nulos.
+*   `AFTER c_descr`: É uma cláusula que indica em qual posição a nova coluna será adicionada em relação às colunas existentes na tabela. Neste caso, a nova coluna será adicionada após a coluna "c\_descr".
+*   `ADD CONSTRAINT`: É uma cláusula que permite adicionar uma restrição à tabela, como uma chave estrangeira.
+*   `fk_tb_marca`: É o nome da nova chave estrangeira que está sendo criada. Você pode substituir esse nome pelo nome que desejar para a chave estrangeira.
+*   `FOREIGN KEY (fk_Marcador)`: É a especificação da coluna "fk\_Marcador" como a chave estrangeira que faz referência à coluna "idMarcador" da tabela "tb\_marca".
+*   `REFERENCES tb_marca(idMarcador)`: É a especificação da tabela e coluna que está sendo referenciada pela chave estrangeira.
+*   `ON DELETE SET NULL`: É uma especificação de ação que será executada quando registros forem deletados na tabela referenciada. Neste caso, os registros na tabela "tb\_baralhos" terão o valor da coluna "fk\_Marcador" definido como nulo quando os registros correspondentes forem deletados na tabela "tb\_marca".
+*   `ON UPDATE CASCADE`: É uma especific
+
+
+
+
+Além das ações "ON DELETE SET NULL" e "ON UPDATE CASCADE", existem outras ações que podem ser usadas em chaves estrangeiras em instruções SQL. Aqui estão algumas delas, juntamente com suas descrições, códigos e detalhes:
+
+1.  `ON DELETE RESTRICT`: Essa ação impede a exclusão de registros na tabela referenciada se houver registros relacionados na tabela que possui a chave estrangeira. Em outras palavras, não permite a exclusão de registros na tabela referenciada enquanto houver registros na tabela que possui a chave estrangeira que fazem referência a esses registros.
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD CONSTRAINT fk_tb_marca
+FOREIGN KEY (fk_Marcador) REFERENCES tb_marca(idMarcador)
+ON DELETE RESTRICT
+ON UPDATE CASCADE;
+```
+
+Detalhes: Se houver registros relacionados na tabela "tb\_baralhos" que possuam a chave estrangeira "fk\_Marcador" referenciando registros na tabela "tb\_marca", a exclusão desses registros na tabela "tb\_marca" será impedida.
+
+2.  `ON DELETE CASCADE`: Essa ação deleta automaticamente registros na tabela que possui a chave estrangeira quando os registros correspondentes na tabela referenciada forem excluídos.
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD CONSTRAINT fk_tb_marca
+FOREIGN KEY (fk_Marcador) REFERENCES tb_marca(idMarcador)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+```
+
+Detalhes: Quando registros na tabela "tb\_marca" forem excluídos, os registros na tabela "tb\_baralhos" que possuam a chave estrangeira "fk\_Marcador" referenciando esses registros também serão excluídos automaticamente.
+
+3.  `ON DELETE NO ACTION`: Essa ação não permite a exclusão de registros na tabela referenciada se houver registros relacionados na tabela que possui a chave estrangeira. É semelhante a "ON DELETE RESTRICT", mas é menos comum e pode ter comportamentos diferentes em alguns bancos de dados.
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD CONSTRAINT fk_tb_marca
+FOREIGN KEY (fk_Marcador) REFERENCES tb_marca(idMarcador)
+ON DELETE NO ACTION
+ON UPDATE CASCADE;
+```
+
+Detalhes: Se houver registros relacionados na tabela "tb\_baralhos" que possuam a chave estrangeira "fk\_Marcador" referenciando registros na tabela "tb\_marca", a exclusão desses registros na tabela "tb\_marca" será impedida.
+
+4.  `ON DELETE SET DEFAULT`: Essa ação define os valores das colunas da tabela que possui a chave estrangeira como seus valores padrão quando os registros correspondentes na tabela referenciada forem excluídos. No entanto, o uso de valores padrão em chaves estrangeiras pode ser complicado e geralmente não é recomendado.
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD CONSTRAINT fk_tb_marca
+FOREIGN KEY (fk_Marcador) REFERENCES tb_marca(idMarcador)
+ON DELETE SET DEFAULT
+ON UPDATE CASCADE;
+```
+
+Detalhes: Quando registros na tabela "tb\_marca" forem excluídos, os valores das colunas da tabela "tb\_baralhos" que possuam a chave estrangeira "fk\_Marcador" referenciando esses registros serão definidos como seus valores padrão.
+
+
+
+5.  `ON UPDATE CASCADE`: Essa ação atualiza automaticamente os valores das colunas na tabela que possui a chave estrangeira quando os valores correspondentes na tabela referenciada forem atualizados.
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD CONSTRAINT fk_tb_marca
+FOREIGN KEY (fk_Marcador) REFERENCES tb_marca(idMarcador)
+ON DELETE SET NULL
+ON UPDATE CASCADE;
+```
+
+Detalhes: Quando registros na tabela "tb\_marca" forem atualizados, os valores das colunas na tabela "tb\_baralhos" que possuam a chave estrangeira "fk\_Marcador" referenciando esses registros serão atualizados automaticamente.
+
+6.  `ON UPDATE RESTRICT`: Essa ação impede a atualização dos registros na tabela referenciada se houver registros relacionados na tabela que possui a chave estrangeira. Em outras palavras, não permite a atualização dos registros na tabela referenciada enquanto houver registros na tabela que possui a chave estrangeira que fazem referência a esses registros.
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD CONSTRAINT fk_tb_marca
+FOREIGN KEY (fk_Marcador) REFERENCES tb_marca(idMarcador)
+ON DELETE SET NULL
+ON UPDATE RESTRICT;
+```
+
+Detalhes: Se houver registros relacionados na tabela "tb\_baralhos" que possuam a chave estrangeira "fk\_Marcador" referenciando registros na tabela "tb\_marca", a atualização desses registros na tabela "tb\_marca" será impedida.
+
+7.  `ON UPDATE NO ACTION`: Essa ação não permite a atualização dos registros na tabela referenciada se houver registros relacionados na tabela que possui a chave estrangeira. É semelhante a "ON UPDATE RESTRICT", mas é menos comum e pode ter comportamentos diferentes em alguns bancos de dados.
+
+sql
+
+```sql
+ALTER TABLE tb_baralhos ADD CONSTRAINT fk_tb_marca
+FOREIGN KEY (fk_Marcador) REFERENCES tb_marca(idMarcador)
+ON DELETE SET NULL
+ON UPDATE NO ACTION;
+```
+
+Detalhes: Se houver registros relacionados na tabela "tb\_baralhos" que possuam a chave estrangeira "fk\_Marcador" referenciando registros na tabela "tb\_marca", a atualização desses registros na tabela "tb\_marca" será impedida.
+
+8.  `ON UPDATE SET DEFAULT`: Essa ação define os valores das colunas na tabela que possui a chave estrangeira como seus valores padrão quando os registros correspondentes na tabela referenciada forem atualizados. No entanto, o uso de valores padrão em chaves estrangeiras pode ser complicado e 
+
+
+
+

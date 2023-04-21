@@ -882,10 +882,11 @@ Referências
 *   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
 *   \[Documentação oficial do MySQL - JOIN Syntax\]([https://dev.mysql.com/doc/refman/8.0](https://dev.mysql.com/doc/refman/8.0)
 
+👉Resultado
+---------
 ![image](https://user-images.githubusercontent.com/93455937/233739380-b45a21f0-4481-4f92-9274-dbb63117d1cf.png)
 
-# **✍️ CMD `LEFT JOIN` parte 1.3**
-
+# **✍️ CMD `LEFT JOIN` parte 1.2**
 
 
 Descrição
@@ -923,3 +924,83 @@ Referências
 *   [Documentação oficial do MySQL - JOIN Syntax](https://dev.mysql.com/doc/refman/8.0/en/join.html)
 
 ![image](https://user-images.githubusercontent.com/93455937/233740804-f44ec465-de24-4dd5-ad48-cf1587adfa24.png)
+
+
+
+<!-- ** -->
+
+# **✍️ CMD `LEFT JOIN` parte 1.3**
+
+Descrição
+---------
+
+Este código é uma instrução SQL para criar um banco de dados chamado "db\_flashCardBar" utilizando a linguagem PHP. A cláusula "IF NOT EXISTS" verifica se o banco de dados já existe antes de criar um novo, evitando duplicações. O conjunto de caracteres (character set) utilizado é o "utf8mb4" e a colação (collation) é "utf8mb4\_unicode\_ci", que são adequados para suportar caracteres Unicode, incluindo emojis e outros caracteres multibyte.
+
+Código
+------
+
+sql
+
+```sql
+CREATE DATABASE IF NOT EXISTS db_flashCardBar CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+Detalhes
+--------
+
+*   `CREATE DATABASE`: É uma instrução SQL utilizada para criar um novo banco de dados no sistema de gerenciamento de banco de dados (SGBD).
+*   `IF NOT EXISTS`: É uma cláusula condicional que verifica se o banco de dados já existe antes de criar um novo. Se o banco de dados já existir, a instrução é ignorada, evitando duplicações.
+*   `db_flashCardBar`: É o nome do banco de dados que está sendo criado. Você pode substituir esse nome pelo nome que desejar para o seu banco de dados.
+*   `CHARACTER SET utf8mb4`: É uma especificação do conjunto de caracteres que o banco de dados deve suportar. "utf8mb4" é um conjunto de caracteres que suporta todos os caracteres Unicode, incluindo emojis e outros caracteres multibyte.
+*   `COLLATE utf8mb4_unicode_ci`: É uma especificação da collation, ou seja, a forma como os caracteres são comparados e ordenados. "utf8mb4\_unicode\_ci" é uma collation que trata os caracteres como case-insensitive (não diferencia maiúsculas de minúsculas) e suporta caracteres Unicode.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - CREATE DATABASE](https://dev.mysql.com/doc/refman/8.0/en/create-database.html)
+*   [Documentação oficial do MySQL - Character Sets and Collations](https://dev.mysql.com/doc/refman/8.0/en/charset-general.html)
+
+
+
+# **✍️ CMD `LEFT JOIN` parte 1.4**
+
+
+Descrição
+---------
+
+Este código é uma consulta SQL para recuperar dados de duas tabelas, "tb\_baralhos" e "tb\_marca", utilizando uma cláusula LEFT JOIN para combinar os dados com base em uma coluna de relação "fk\_Marcador" em "tb\_baralhos" e "idMarcador" em "tb\_marca". A consulta é filtrada usando uma cláusula WHERE para retornar apenas os registros onde o valor da coluna "c\_bar" em "tb\_baralhos" é igual a 'Baralho #001'.
+
+Código
+------
+
+sql
+
+```sql
+SELECT tb_baralhos.idBar, tb_baralhos.c_bar, tb_baralhos.fk_Marcador, tb_marca.idMarcador
+FROM tb_baralhos
+LEFT JOIN tb_marca
+ON tb_baralhos.fk_Marcador = tb_marca.idMarcador
+WHERE tb_baralhos.c_bar = 'Baralho #001';
+```
+
+Detalhes
+--------
+
+*   `SELECT`: É uma instrução SQL utilizada para recuperar dados de uma ou mais tabelas de um banco de dados.
+*   `tb_baralhos`: É o nome da primeira tabela ("tb\_baralhos") da qual os dados estão sendo recuperados.
+*   `tb_marca`: É o nome da segunda tabela ("tb\_marca") que é combinada com "tb\_baralhos" usando a cláusula LEFT JOIN.
+*   `idBar`, `c_bar`, `fk_Marcador`, `idMarcador`: São os nomes das colunas específicas que estão sendo selecionadas para recuperar os dados. Você pode adicionar ou remover colunas conforme necessário para atender aos requisitos de sua aplicação.
+*   `LEFT JOIN`: É uma cláusula que combina as linhas de duas tabelas com base em uma coluna de relação ("fk\_Marcador" em "tb\_baralhos" e "idMarcador" em "tb\_marca"). Se não houver correspondência na tabela "tb\_marca", NULL será retornado.
+*   `ON`: É uma cláusula que especifica a condição de junção entre as tabelas "tb\_baralhos" e "tb\_marca".
+*   `WHERE`: É uma cláusula que filtra os resultados com base em uma condição específica. Neste caso, apenas os registros onde o valor da coluna "c\_bar" em "tb\_baralhos" é igual a 'Baralho #001' serão retornados.
+*   `--`: É uma notação de comentário em SQL. Neste caso, a linha que inicia com "--" é um comentário que pode ser usado para adicionar notas ou observações ao código SQL.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
+*   [Documentação oficial do MySQL - JOIN Syntax](https://dev.mysql.com/doc/refman/8.0/en/join.html)
+
+👉Resultado
+---------
+![image](https://user-images.githubusercontent.com/93455937/233741913-31db7fde-9926-4adb-8090-47a6df5b6704.png)

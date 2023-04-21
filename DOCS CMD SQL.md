@@ -836,3 +836,51 @@ Referências
 👉Resultado
 ---------
 ![image](https://user-images.githubusercontent.com/93455937/233738686-dc960c16-dd72-4189-9926-10bbffd90dc2.png)
+
+
+<!-- * -->
+
+# **✍️ CMD `LEFT JOIN` parte 1.1**
+
+
+Descrição
+---------
+
+Este código é uma consulta SQL que utiliza a cláusula "SELECT" para recuperar dados de duas tabelas, "tb\_baralhos" e "tb\_marca", em um banco de dados. A consulta inclui uma junção (JOIN) entre as duas tabelas, especificamente um LEFT JOIN, para combinar registros com base em uma coluna de chave estrangeira (fk\_Marcador) na tabela "tb\_baralhos" e uma coluna de chave primária (idMarcador) na tabela "tb\_marca". A consulta seleciona apenas algumas colunas específicas das tabelas, ou seja, "idBar", "c\_bar", "fk\_Marcador" da tabela "tb\_baralhos" e a coluna "idMarcador" da tabela "tb\_marca".
+
+Motivo de usar apenas algumas colunas das tabelas
+-------------------------------------------------
+
+O motivo de selecionar apenas algumas colunas específicas das tabelas na consulta pode ser por questões de eficiência e desempenho. Quando se trabalha com bancos de dados grandes e complexos, selecionar apenas as colunas necessárias pode reduzir a quantidade de dados transferidos entre o banco de dados e a aplicação, economizando recursos de rede e melhorando a performance da consulta. Além disso, selecionar apenas as colunas necessárias pode simplificar o código e torná-lo mais legível.
+
+Código
+------
+
+sql
+
+```sql
+SELECT tb_baralhos.idBar, tb_baralhos.c_bar, tb_baralhos.fk_Marcador, tb_marca.idMarcador
+FROM tb_baralhos
+LEFT JOIN tb_marca
+ON tb_baralhos.fk_Marcador = tb_marca.idMarcador;
+```
+
+Detalhes
+--------
+
+*   `SELECT`: É uma instrução SQL utilizada para selecionar colunas específicas de uma tabela.
+*   `tb_baralhos`: É o nome da primeira tabela (também conhecida como tabela da esquerda) que está sendo consultada.
+*   `idBar`, `c_bar`, `fk_Marcador`: São os nomes das colunas da tabela "tb\_baralhos" que estão sendo selecionadas na consulta.
+*   `tb_marca`: É o nome da segunda tabela (também conhecida como tabela da direita) que está sendo junta à tabela "tb\_baralhos".
+*   `idMarcador`: É o nome da coluna da tabela "tb\_marca" que está sendo selecionada na consulta.
+*   `LEFT JOIN`: É um tipo de junção (JOIN) que retorna todos os registros da tabela da esquerda (tb\_baralhos) e os registros correspondentes da tabela da direita (tb\_marca) com base na condição de junção "tb\_baralhos.fk\_Marcador = tb\_marca.idMarcador". Se não houver correspondências na tabela da direita, NULL será retornado.
+*   `ON`: É uma cláusula que especifica a condição de junção entre as tabelas "tb\_baralhos" e "tb\_marca", no caso, a igualdade entre a coluna "fk\_Marcador" da tabela "tb\_baralhos" e a coluna "idMarcador" da tabela "tb\_marca".
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
+*   \[Documentação oficial do MySQL - JOIN Syntax\]([https://dev.mysql.com/doc/refman/8.0](https://dev.mysql.com/doc/refman/8.0)
+
+![image](https://user-images.githubusercontent.com/93455937/233739380-b45a21f0-4481-4f92-9274-dbb63117d1cf.png)
+

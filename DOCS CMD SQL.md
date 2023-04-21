@@ -766,4 +766,69 @@ Detalhes: Se houver registros relacionados na tabela "tb\_baralhos" que possuam 
 
 
 
+Descrição
+---------
+
+Este código é uma instrução SQL para criar um banco de dados chamado "db\_flashCardBar" utilizando a linguagem PHP. A cláusula "IF NOT EXISTS" verifica se o banco de dados já existe antes de criar um novo, evitando duplicações. O conjunto de caracteres (character set) utilizado é o "utf8mb4" e a colação (collation) é "utf8mb4\_unicode\_ci", que são adequados para suportar caracteres Unicode, incluindo emojis e outros caracteres multibyte.
+
+Código
+------
+
+sql
+
+```sql
+CREATE DATABASE IF NOT EXISTS db_flashCardBar CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+Detalhes
+--------
+
+*   `CREATE DATABASE`: É uma instrução SQL utilizada para criar um novo banco de dados no sistema de gerenciamento de banco de dados (SGBD).
+*   `IF NOT EXISTS`: É uma cláusula condicional que verifica se o banco de dados já existe antes de criar um novo. Se o banco de dados já existir, a instrução é ignorada, evitando duplicações.
+*   `db_flashCardBar`: É o nome do banco de dados que está sendo criado. Você pode substituir esse nome pelo nome que desejar para o seu banco de dados.
+*   `CHARACTER SET utf8mb4`: É uma especificação do conjunto de caracteres que o banco de dados deve suportar. "utf8mb4" é um conjunto de caracteres que suporta todos os caracteres Unicode, incluindo emojis e outros caracteres multibyte.
+*   `COLLATE utf8mb4_unicode_ci`: É uma especificação da collation, ou seja, a forma como os caracteres são comparados e ordenados. "utf8mb4\_unicode\_ci" é uma collation que trata os caracteres como case-insensitive (não diferencia maiúsculas de minúsculas) e suporta caracteres Unicode.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - CREATE DATABASE](https://dev.mysql.com/doc/refman/8.0/en/create-database.html)
+*   [Documentação oficial do MySQL - Character Sets and Collations](https://dev.mysql.com/doc/refman/8.0/en/charset-general.html)
+
+
+# **✍️ CMD `LEFT JOIN` parte 1.0**
+
+
+Descrição
+---------
+
+Este código é uma instrução SQL para realizar uma consulta em um banco de dados utilizando a linguagem PHP. A consulta utiliza a cláusula JOIN para combinar informações de duas tabelas diferentes: "tb\_baralhos" e "tb\_marca". A consulta retorna todas as colunas (\*) das tabelas "tb\_baralhos" e "tb\_marca" para as linhas onde os valores das colunas "fk\_Marcador" em "tb\_baralhos" e "idMarcador" em "tb\_marca" são iguais.
+
+Código+
+------
+
+sql
+
+```sql
+SELECT tb_baralhos.*, tb_marca.*
+FROM tb_baralhos
+LEFT JOIN tb_marca
+ON tb_baralhos.fk_Marcador = tb_marca.idMarcador;
+```
+
+Detalhes
+--------
+
+*   `SELECT`: É uma instrução SQL utilizada para selecionar dados de uma ou mais tabelas em um banco de dados.
+*   `tb_baralhos` e `tb_marca`: São os nomes das tabelas sendo consultadas. Você pode substituir esses nomes pelos nomes das tabelas reais do seu banco de dados.
+*   `.*`: É um curinga que representa todas as colunas das tabelas sendo selecionadas. Neste caso, todas as colunas das tabelas "tb\_baralhos" e "tb\_marca" serão retornadas na consulta.
+*   `LEFT JOIN`: É uma cláusula JOIN que combina registros de duas tabelas mesmo quando não há correspondência entre as colunas de junção. Neste caso, todos os registros de "tb\_baralhos" serão retornados, mesmo que não haja correspondência na tabela "tb\_marca".
+*   `ON`: É uma cláusula que especifica a condição de junção entre as tabelas. Neste caso, a junção é feita comparando os valores das colunas "fk\_Marcador" em "tb\_baralhos" e "idMarcador" em "tb\_marca".
+*   `tb_baralhos.fk_Marcador` e `tb_marca.idMarcador`: São os nomes das colunas sendo comparadas para a junção. Você pode substituir esses nomes pelos nomes reais das colunas de junção nas suas tabelas.
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
+*   [Documentação oficial do MySQL - JOIN Syntax](https://dev.mysql.com/doc/refman/8.0/en/join-syntax.html)
 

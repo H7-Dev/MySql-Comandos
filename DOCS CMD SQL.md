@@ -884,3 +884,42 @@ Referências
 
 ![image](https://user-images.githubusercontent.com/93455937/233739380-b45a21f0-4481-4f92-9274-dbb63117d1cf.png)
 
+# **✍️ CMD `LEFT JOIN` parte 1.3**
+
+
+
+Descrição
+---------
+
+Este código é uma consulta SQL que busca dados de duas tabelas relacionadas, "tb\_baralhos" e "tb\_marca", utilizando uma junção (JOIN) interna (inner JOIN). A consulta retorna as colunas "idBar", "c\_bar", "fk\_Marcador" da tabela "tb\_baralhos" e a coluna "idMarcador" da tabela "tb\_marca". Essa consulta é utilizada para obter dados de baralhos e seus respectivos marcadores em um sistema CRUD (Create, Read, Update, Delete) em PHP utilizando o padrão de arquitetura MVC (Model-View-Controller).
+
+Código
+------
+
+sql
+
+```sql
+SELECT tb_baralhos.idBar, tb_baralhos.c_bar, tb_baralhos.fk_Marcador, tb_marca.idMarcador
+FROM tb_baralhos
+INNER JOIN tb_marca
+ON tb_baralhos.fk_Marcador = tb_marca.idMarcador;
+```
+
+Detalhes
+--------
+
+*   `SELECT`: É uma instrução SQL utilizada para selecionar os dados a serem retornados pela consulta.
+*   `tb_baralhos`: É o nome da tabela "tb\_baralhos" da qual os dados estão sendo selecionados.
+*   `tb_marca`: É o nome da tabela "tb\_marca" que está sendo utilizada na junção (JOIN) com a tabela "tb\_baralhos".
+*   `idBar`, `c_bar`, `fk_Marcador`: São as colunas da tabela "tb\_baralhos" que estão sendo selecionadas na consulta.
+*   `idMarcador`: É a coluna da tabela "tb\_marca" que está sendo selecionada na consulta.
+*   `INNER JOIN`: É um tipo de junção (JOIN) que retorna apenas os registros que têm correspondência em ambas as tabelas ("tb\_baralhos" e "tb\_marca") com base na condição de junção especificada.
+*   `ON`: É uma cláusula que especifica a condição de junção entre as tabelas "tb\_baralhos" e "tb\_marca". Neste caso, a condição é que a coluna "fk\_Marcador" da tabela "tb\_baralhos" seja igual à coluna "idMarcador" da tabela "tb\_marca".
+
+Referências
+-----------
+
+*   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
+*   [Documentação oficial do MySQL - JOIN Syntax](https://dev.mysql.com/doc/refman/8.0/en/join.html)
+
+![image](https://user-images.githubusercontent.com/93455937/233740804-f44ec465-de24-4dd5-ad48-cf1587adfa24.png)

@@ -832,3 +832,7 @@ Referências
 *   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
 *   [Documentação oficial do MySQL - JOIN Syntax](https://dev.mysql.com/doc/refman/8.0/en/join-syntax.html)
 
+
+👉Resultado
+---------
+![image](https://user-images.githubusercontent.com/93455937/233738686-dc960c16-dd72-4189-9926-10bbffd90dc2.png)

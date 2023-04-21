@@ -1001,6 +1001,8 @@ Referências
 *   [Documentação oficial do MySQL - SELECT](https://dev.mysql.com/doc/refman/8.0/en/select.html)
 *   [Documentação oficial do MySQL - JOIN Syntax](https://dev.mysql.com/doc/refman/8.0/en/join.html)
 
-👉Resultado
+👉Resultados
 ---------
 ![image](https://user-images.githubusercontent.com/93455937/233741913-31db7fde-9926-4adb-8090-47a6df5b6704.png)
+
+![image](https://user-images.githubusercontent.com/93455937/233742093-3f31fe17-bf90-4b34-ac29-8b0f042bc6af.png)
